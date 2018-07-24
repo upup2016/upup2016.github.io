@@ -390,18 +390,20 @@ $ npm -v
 $ git config --global user.email&quot;xxx@email.com&quot;    
 </code></pre><p>(2)配置公钥    </p>
 <pre><code>$ ssh-keygen -t rsa -C &quot;xxx@qq.com&quot;    
-</code></pre><p>生成密钥，得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。<br>(3)添加密钥到ssh-agent    </p>
+</code></pre><p>生成密钥，得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。<br>(3)添加密钥到ssh-agent  </p>
+<pre><code>$ eval &quot;$(ssh-agent -s)&quot;  
+</code></pre><p>(4)添加生成的SSH key到ssh-agent      </p>
 <pre><code>$ ssh-add ~/.ssh/id_rsa    
-</code></pre><p>(4)将ssh添加到Github<br>在settings新建一个new ssh key，将id_rsa.pub文件里的内容复制上去<br>(5)测试添加ssh是否成功    </p>
+</code></pre><p>(5)将ssh添加到Github<br>在settings新建一个new ssh key，将id_rsa.pub文件里的内容复制上去<br>(6)测试添加ssh是否成功    </p>
 <pre><code>$ ssh -T git@github.com      
-</code></pre><p>出现用户名，说明成功了。<br>(6)在blog文件夹中找到_config.yml文件，修改repo值    </p>
+</code></pre><p>出现用户名，说明成功了。<br>(7)在blog文件夹中找到_config.yml文件，修改repo值    </p>
 <pre><code>deploy:    
   type: git    
   repository: git@github.com:username/username.github.io.git    
   branch: master    
-</code></pre><p>这里注意冒号后边一定空一格。<br>(7)安装扩展    </p>
+</code></pre><p>这里注意冒号后边一定空一格。<br>(8)安装扩展    </p>
 <pre><code>$ npm install hexo-deployer-git --save    
-</code></pre><p>(8)生成及部署    </p>
+</code></pre><p>(9)生成及部署    </p>
 <pre><code>$ hexo d     
 $ hexo g    
 </code></pre><p>部署成功后可以访问 url:username.github.io<br>hexo+github的个人博客搭建完成。        </p>
