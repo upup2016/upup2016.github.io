@@ -367,43 +367,43 @@
           
             <p>主要技术是：github+hexo+next主题。</p>
 <h3 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h3><h5 id="1、安装和配置Git环境"><a href="#1、安装和配置Git环境" class="headerlink" title="1、安装和配置Git环境"></a>1、安装和配置Git环境</h5><p>下载：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a><br>配置成功，利用代码验证       </p>
-<pre><code>bash $ git --version
+<pre><code>$ git --version
 </code></pre><h6 id="2、安装和配置Node-js环境"><a href="#2、安装和配置Node-js环境" class="headerlink" title="2、安装和配置Node.js环境"></a>2、安装和配置Node.js环境</h6><p>下载：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a><br>配置成功，利用代码验证     </p>
-<pre><code>bash $ node -v       
-bash $ npm -v      
+<pre><code>$ node -v       
+$ npm -v      
 </code></pre><h5 id="3、新建Github项目"><a href="#3、新建Github项目" class="headerlink" title="3、新建Github项目"></a>3、新建Github项目</h5><p>官网：<a href="https://github.com/" target="_blank" rel="noopener">Github</a><br>项目的名称必须是：username.github.io，需要勾选Initialize this repository with a README<br>在新建的项目的settings中，找到Github Pages,会看到网址，通过该网址可以访问个人博客 (url:username.github.io/.)  </p>
 <h5 id="4、安装Hexo"><a href="#4、安装Hexo" class="headerlink" title="4、安装Hexo"></a>4、安装Hexo</h5><p>(1)在合适的位置新建一个blog文件夹，通过cmd或者Git bash进入blog文件夹<br>安装Hexo       </p>
-<pre><code>bash $ npm install hexo -g       
+<pre><code>$ npm install hexo -g       
 </code></pre><p>(2)检验是否安装成功    </p>
-<pre><code>bash $ hexo -v  
+<pre><code>$ hexo -v  
 </code></pre><p>(3)初始化blog文件夹    </p>
-<pre><code>bash $ hexo init    
+<pre><code>$ hexo init    
 </code></pre><p>(4)会看到后面出现“Start blogging with Hexo!”<br>安装所需要的组件    </p>
-<pre><code>bash $ npm install  
+<pre><code>$ npm install  
 </code></pre><p>(5)体验hexo    </p>
-<pre><code>bash $ hexo g  
+<pre><code>$ hexo g  
 </code></pre><p>(6)开始服务器，不要按Ctrl+C否则无法正常访问  </p>
-<pre><code>bash $ hexo s  
+<pre><code>$ hexo s  
 </code></pre><p>在浏览器中输入 url:localhost:4000,可以访问该网址<br>至此，Hexo部分的工作已经完成。   </p>
 <h5 id="5、Hexo与Github连接"><a href="#5、Hexo与Github连接" class="headerlink" title="5、Hexo与Github连接"></a>5、Hexo与Github连接</h5><p>(1)第一次使用Git需要设置username和email     </p>
-<pre><code>bash $ git config --global user.name &quot;username&quot;    
-bash $ git config --global user.email&quot;xxx@email.com&quot;    
+<pre><code>$ git config --global user.name &quot;username&quot;    
+$ git config --global user.email&quot;xxx@email.com&quot;    
 </code></pre><p>(2)配置公钥    </p>
-<pre><code>bash $ ssh-keygen -t rsa -C &quot;xxx@qq.com&quot;    
+<pre><code>$ ssh-keygen -t rsa -C &quot;xxx@qq.com&quot;    
 </code></pre><p>生成密钥，得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。<br>(3)添加密钥到ssh-agent    </p>
-<pre><code>bash $ ssh-add ~/.ssh/id_rsa    
+<pre><code>$ ssh-add ~/.ssh/id_rsa    
 </code></pre><p>(4)将ssh添加到Github<br>在settings新建一个new ssh key，将id_rsa.pub文件里的内容复制上去<br>(5)测试添加ssh是否成功    </p>
-<pre><code>bash $ ssh -T git@github.com      
+<pre><code>$ ssh -T git@github.com      
 </code></pre><p>出现用户名，说明成功了。<br>(6)在blog文件夹中找到_config.yml文件，修改repo值    </p>
 <pre><code>deploy:    
   type: git    
   repository: git@github.com:username/username.github.io.git    
   branch: master    
 </code></pre><p>这里注意冒号后边一定空一格。<br>(7)安装扩展    </p>
-<pre><code>bash $ npm install hexo-deployer-git --save    
+<pre><code>$ npm install hexo-deployer-git --save    
 </code></pre><p>(8)生成及部署    </p>
-<pre><code>bash $ hexo d     
-bash $ hexo g    
+<pre><code>$ hexo d     
+$ hexo g    
 </code></pre><p>部署成功后可以访问 url:username.github.io<br>hexo+github的个人博客搭建完成。        </p>
 
           
